@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>カフェ学習研究 - 第三の場所としての機能</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-coffee"></i>
+                <span>カフェ学習研究</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">ホーム</a></li>
+                <li><a href="#about">研究概要</a></li>
+                <li><a href="#method">研究方法</a></li>
+                <li><a href="#results">結果</a></li>
+                <li><a href="#discussion">考察</a></li>
+                <li><a href="#contact">お問い合わせ</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>大学生の学習における「第三の場所」としてのカフェの機能</h1>
+            <p class="subtitle">音環境・混雑・席タイプの最適域：混合研究＋多層モデリング</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">168</span>
+                    <span class="stat-label">調査対象者</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">8</span>
+                    <span class="stat-label">調査店舗</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">55-65</span>
+                    <span class="stat-label">最適音圧(dBA)</span>
+                </div>
+            </div>
+            <a href="#about" class="cta-button">研究詳細を見る</a>
+        </div>
+        <div class="hero-visual">
+            <div class="cafe-scene">
+                <div class="cafe-table"></div>
+                <div class="cafe-chair"></div>
+                <div class="sound-wave"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>研究概要</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>首都圏の大学生を対象に、カフェが学習場として機能する条件を検証した研究です。横断調査（N=168）と室内準実験（n=36）を統合し、環境音、混雑度、席タイプが学習集中度に与える影響を分析しました。</p>
+                    
+                    <div class="key-findings">
+                        <h3>主要な発見</h3>
+                        <ul>
+                            <li><strong>中程度の環境音（55-65dBA）</strong>が集中度を+8.4点向上</li>
+                            <li><strong>混雑度</strong>は逆U字型の効果（適度な混雑が最適）</li>
+                            <li><strong>カウンター席での個別学習</strong>が最も効果的</li>
+                            <li><strong>第三の場所愛着</strong>が効果の約19-22%を媒介</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="research-diagram">
+                        <div class="diagram-node" data-tooltip="個人特性（外向性、動機）">
+                            <i class="fas fa-user"></i>
+                            <span>個人特性</span>
+                        </div>
+                        <div class="diagram-arrow">→</div>
+                        <div class="diagram-node" data-tooltip="環境要因（音、混雑、席）">
+                            <i class="fas fa-coffee"></i>
+                            <span>環境要因</span>
+                        </div>
+                        <div class="diagram-arrow">→</div>
+                        <div class="diagram-node" data-tooltip="感情的覚醒">
+                            <i class="fas fa-brain"></i>
+                            <span>覚醒</span>
+                        </div>
+                        <div class="diagram-arrow">→</div>
+                        <div class="diagram-node" data-tooltip="学習集中度">
+                            <i class="fas fa-target"></i>
+                            <span>集中度</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Method Section -->
+    <section id="method" class="method">
+        <div class="container">
+            <h2>研究方法</h2>
+            <div class="method-grid">
+                <div class="method-card">
+                    <div class="method-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>横断実地調査</h3>
+                    <p><strong>対象:</strong> 168名の文系学部生</p>
+                    <p><strong>場所:</strong> 大学半径1.5kmの8店舗</p>
+                    <p><strong>測定:</strong> 環境音、混雑度、集中度、席タイプ</p>
+                </div>
+                
+                <div class="method-card">
+                    <div class="method-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>室内準実験</h3>
+                    <p><strong>対象:</strong> 36名の被験者</p>
+                    <p><strong>条件:</strong> 35dB、55dB、75dBの3条件</p>
+                    <p><strong>課題:</strong> 語彙推論・短文編集</p>
+                </div>
+                
+                <div class="method-card">
+                    <div class="method-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3>統計解析</h3>
+                    <p><strong>手法:</strong> 線形混合効果モデル</p>
+                    <p><strong>媒介分析:</strong> ブートストラップ法</p>
+                    <p><strong>検定:</strong> 反復測定ANOVA</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="results" class="results">
+        <div class="container">
+            <h2>研究結果</h2>
+            
+            <div class="results-grid">
+                <div class="result-card highlight">
+                    <h3>環境音の効果</h3>
+                    <div class="result-number positive">+8.4</div>
+                    <p>中程度の環境音（55-65dBA）による集中度向上</p>
+                    <div class="confidence-interval">95%CI [4.1, 12.7], p<.001</div>
+                </div>
+                
+                <div class="result-card">
+                    <h3>高騒音の影響</h3>
+                    <div class="result-number negative">-5.1</div>
+                    <p>高騒音（>75dBA）による集中度低下</p>
+                    <div class="confidence-interval">95%CI [-9.5, -0.6], p=.026</div>
+                </div>
+                
+                <div class="result-card">
+                    <h3>混雑度の効果</h3>
+                    <div class="result-chart">
+                        <canvas id="crowdingChart" width="200" height="150"></canvas>
+                    </div>
+                    <p>逆U字型の効果（線形β=+1.98, 二次β=-0.39）</p>
+                </div>
+                
+                <div class="result-card">
+                    <h3>席タイプ×学習形態</h3>
+                    <div class="result-number positive">+4.0</div>
+                    <p>カウンター×個別学習の組み合わせ効果</p>
+                    <div class="confidence-interval">95%CI [0.2, 7.8], p=.040</div>
+                </div>
+            </div>
+            
+            <div class="experiment-results">
+                <h3>準実験結果</h3>
+                <div class="experiment-chart">
+                    <canvas id="experimentChart" width="400" height="300"></canvas>
+                </div>
+                <p>55dB条件が最良の成績を示し、35dBと75dBを有意に上回りました。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Discussion Section -->
+    <section id="discussion" class="discussion">
+        <div class="container">
+            <h2>考察と実務的含意</h2>
+            
+            <div class="discussion-content">
+                <div class="discussion-text">
+                    <h3>理論的意義</h3>
+                    <ul>
+                        <li><strong>最適刺激仮説</strong>を実地データと準実験の両輪で支持</li>
+                        <li><strong>社会的密度</strong>は「気配」が覚醒を整える一方、過密は資源を奪う</li>
+                        <li><strong>相互行為秩序</strong>の観点で、カウンター席は視線・身体配置の自己管理が容易</li>
+                        <li><strong>外向性</strong>は環境刺激の受容域を広げ、中程度ノイズの利得を増幅</li>
+                    </ul>
+                </div>
+                
+                <div class="practical-implications">
+                    <h3>実務的含意</h3>
+                    <div class="implication-cards">
+                        <div class="implication-card">
+                            <h4>学生向け</h4>
+                            <ul>
+                                <li>静かすぎ×うるさすぎを避ける</li>
+                                <li>55-65dBAを目安に選択</li>
+                                <li>占有率3/5程度の店舗</li>
+                                <li>個別学習はカウンター席</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="implication-card">
+                            <h4>店舗向け</h4>
+                            <ul>
+                                <li>学習ゾーンのBGMはボーカル弱</li>
+                                <li>音圧55-65dBAに調整</li>
+                                <li>視線遮蔽ありのカウンター列</li>
+                                <li>過密回避の席間隔</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>お問い合わせ</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>研究について</h3>
+                    <p>この研究に関するご質問やご意見がございましたら、お気軽にお問い合わせください。</p>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>research@cafe-study.com</span>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-university"></i>
+                        <span>首都圏大学 心理学部</span>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-calendar"></i>
+                        <span>2024年度 ゼミ研究</span>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">お名前</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">メールアドレス</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">メッセージ</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">送信</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>カフェ学習研究</h4>
+                    <p>大学生の学習における「第三の場所」としてのカフェの機能に関する研究</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>研究情報</h4>
+                    <ul>
+                        <li><a href="#about">研究概要</a></li>
+                        <li><a href="#method">研究方法</a></li>
+                        <li><a href="#results">結果</a></li>
+                        <li><a href="#discussion">考察</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>参考文献</h4>
+                    <ul>
+                        <li>Oldenburg, R. (1999). The Great Good Place</li>
+                        <li>Mehrabian, A., & Russell, J. A. (1974)</li>
+                        <li>Mehta, R., et al. (2012). Is noise always bad?</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 カフェ学習研究. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
