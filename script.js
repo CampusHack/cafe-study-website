@@ -171,18 +171,7 @@ function createExperimentChart() {
     ctx.font = 'bold 20px Noto Sans JP, sans-serif';
     ctx.fillText('準実験結果：正答率', 200, 22);
     
-    // Add significance indicators (moved lower)
-    const sigY = 140;
-    ctx.strokeStyle = '#8B4513';
-    ctx.lineWidth = 2;
-    ctx.beginPath();
-    ctx.moveTo(startX + barWidth/2, sigY);
-    ctx.lineTo(startX + barWidth + barSpacing + barWidth/2, sigY);
-    ctx.stroke();
-    
-    ctx.fillStyle = '#8B4513';
-    ctx.font = '12px Noto Sans JP, sans-serif';
-    ctx.fillText('p < .01', 200, sigY - 10);
+    // Note: significance line and label removed for cleaner look
 }
 
 // Animate numbers on scroll
