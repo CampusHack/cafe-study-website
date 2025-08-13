@@ -97,6 +97,8 @@ function createExperimentChart() {
     if (!canvas) return;
 
     const ctx = canvas.getContext('2d');
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
     
     // Chart data
     const data = [
@@ -110,6 +112,36 @@ function createExperimentChart() {
     const startX = 50;
     const maxHeight = 200;
     const maxValue = Math.max(...data.map(d => d.value));
+
+    // helper: draw text with subtle background to avoid overlapping/garbling
+    function drawTextWithBg(text, x, y) {
+        const paddingX = 6;
+        const paddingY = 3;
+        const metrics = ctx.measureText(text);
+        const textW = metrics.width;
+        const textH = 16; // approximate height
+        ctx.save();
+        ctx.fillStyle = 'rgba(255,255,255,0.9)';
+        ctx.strokeStyle = 'rgba(0,0,0,0.05)';
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        const rx = x - textW / 2 - paddingX;
+        const ry = y - textH / 2 - paddingY;
+        const rw = textW + paddingX * 2;
+        const rh = textH + paddingY * 2;
+        const r = 6;
+        ctx.moveTo(rx + r, ry);
+        ctx.arcTo(rx + rw, ry, rx + rw, ry + rh, r);
+        ctx.arcTo(rx + rw, ry + rh, rx, ry + rh, r);
+        ctx.arcTo(rx, ry + rh, rx, ry, r);
+        ctx.arcTo(rx, ry, rx + rw, ry, r);
+        ctx.closePath();
+        ctx.fill();
+        ctx.stroke();
+        ctx.fillStyle = '#333';
+        ctx.fillText(text, x, y);
+        ctx.restore();
+    }
     
     // Draw bars
     data.forEach((item, index) => {
@@ -121,34 +153,33 @@ function createExperimentChart() {
         ctx.fillStyle = item.color;
         ctx.fillRect(x, y, barWidth, height);
         
-        // Add value label
-        ctx.fillStyle = '#333';
-        ctx.font = 'bold 16px Noto Sans JP';
-        ctx.textAlign = 'center';
-        ctx.fillText(item.value + '%', x + barWidth/2, y - 10);
+        // Add value label (with background to improve legibility)
+        ctx.font = 'bold 16px Noto Sans JP, sans-serif';
+        drawTextWithBg(item.value + '%', x + barWidth / 2, y - 14);
         
-        // Add label
-        ctx.font = '14px Noto Sans JP';
-        ctx.fillText(item.label, x + barWidth/2, 270);
+        // Add axis label
+        ctx.font = '14px Noto Sans JP, sans-serif';
+        ctx.fillStyle = '#333';
+        ctx.fillText(item.label, x + barWidth/2, 285);
     });
     
-    // Add title
+    // Add title (slightly higher to avoid overlap)
     ctx.fillStyle = '#8B4513';
-    ctx.font = 'bold 18px Noto Sans JP';
-    ctx.textAlign = 'center';
-    ctx.fillText('準実験結果: 正答率', 200, 30);
+    ctx.font = 'bold 20px Noto Sans JP, sans-serif';
+    ctx.fillText('準実験結果：正答率', 200, 22);
     
-    // Add significance indicators
+    // Add significance indicators (moved lower)
+    const sigY = 80;
     ctx.strokeStyle = '#8B4513';
     ctx.lineWidth = 2;
     ctx.beginPath();
-    ctx.moveTo(startX + barWidth/2, 50);
-    ctx.lineTo(startX + barWidth + barSpacing + barWidth/2, 50);
+    ctx.moveTo(startX + barWidth/2, sigY);
+    ctx.lineTo(startX + barWidth + barSpacing + barWidth/2, sigY);
     ctx.stroke();
     
     ctx.fillStyle = '#8B4513';
-    ctx.font = '12px Noto Sans JP';
-    ctx.fillText('p<.01', 200, 45);
+    ctx.font = '12px Noto Sans JP, sans-serif';
+    ctx.fillText('p < .01', 200, sigY - 10);
 }
 
 // Animate numbers on scroll
