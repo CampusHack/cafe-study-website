@@ -110,7 +110,9 @@ function createExperimentChart() {
     const barWidth = 80;
     const barSpacing = 40;
     const startX = 50;
-    const maxHeight = 200;
+    // Lower the bars to leave more room for the title/labels
+    const chartBaselineY = 260; // bottom of bars
+    const maxHeight = 160;      // bar max height
     const maxValue = Math.max(...data.map(d => d.value));
 
     // helper: draw text with subtle background to avoid overlapping/garbling
@@ -147,7 +149,7 @@ function createExperimentChart() {
     data.forEach((item, index) => {
         const x = startX + index * (barWidth + barSpacing);
         const height = (item.value / maxValue) * maxHeight;
-        const y = 250 - height;
+        const y = chartBaselineY - height;
         
         // Draw bar
         ctx.fillStyle = item.color;
@@ -155,12 +157,13 @@ function createExperimentChart() {
         
         // Add value label (with background to improve legibility)
         ctx.font = 'bold 16px Noto Sans JP, sans-serif';
-        drawTextWithBg(item.value + '%', x + barWidth / 2, y - 14);
+        const safeLabelY = Math.max(y - 14, 110); // keep away from title
+        drawTextWithBg(item.value + '%', x + barWidth / 2, safeLabelY);
         
         // Add axis label
         ctx.font = '14px Noto Sans JP, sans-serif';
         ctx.fillStyle = '#333';
-        ctx.fillText(item.label, x + barWidth/2, 285);
+        ctx.fillText(item.label, x + barWidth/2, 290);
     });
     
     // Add title (slightly higher to avoid overlap)
@@ -169,7 +172,7 @@ function createExperimentChart() {
     ctx.fillText('準実験結果：正答率', 200, 22);
     
     // Add significance indicators (moved lower)
-    const sigY = 80;
+    const sigY = 140;
     ctx.strokeStyle = '#8B4513';
     ctx.lineWidth = 2;
     ctx.beginPath();
